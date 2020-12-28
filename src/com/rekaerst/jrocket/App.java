@@ -19,18 +19,18 @@ public class App extends Canvas implements Runnable {
     private boolean running = false;
 
     private Handler handler;
+    private HUD hud;
 
     public App() {
         if (isLinux()) {
             System.setProperty("sun.java2d.opengl", "true");
         }
-        new Window(WIDTH, HEIGHT, TITLE, this);
         handler = new Handler();
+
         this.addKeyListener(new KeyInput(handler));
 
-        GameObject player = new Player(0, HEIGHT - 40, ID.Player);
-        handler.objects.add(player);
-
+        new Window(WIDTH, HEIGHT, TITLE, this);
+        hud = new HUD();
     }
 
     public synchronized void start() {
@@ -55,6 +55,8 @@ public class App extends Canvas implements Runnable {
         double delta = 0;
         long timer = System.currentTimeMillis();
         int frames = 0;
+
+        this.requestFocus();
         while (running) {
             long now = System.nanoTime();
             delta += (now - lastTime) / ns;
@@ -79,6 +81,7 @@ public class App extends Canvas implements Runnable {
 
     private void ticks() {
         handler.tick();
+        hud.tick();
     }
 
     private void render() {
@@ -95,7 +98,10 @@ public class App extends Canvas implements Runnable {
         // if (isLinux()) {
         // Toolkit.getDefaultToolkit().sync();
         // }
+
         handler.render(g);
+
+        hud.render(g);
 
         g.dispose();
         bs.show();
