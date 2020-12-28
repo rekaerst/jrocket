@@ -1,4 +1,4 @@
-package com.rekaerst.jrocket;
+package com.rekaerst.jrocket.gameObjects;
 
 public enum ID {
 

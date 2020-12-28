@@ -2,8 +2,6 @@ package com.rekaerst.jrocket.gameObjects;
 
 import java.awt.Graphics;
 
-import com.rekaerst.jrocket.ID;
-
 public class Player extends RocketPart {
 
     public Player(int x, int y, ID id) {

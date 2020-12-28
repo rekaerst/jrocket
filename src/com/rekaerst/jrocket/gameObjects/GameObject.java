@@ -2,8 +2,6 @@ package com.rekaerst.jrocket.gameObjects;
 
 import java.awt.Graphics;
 
-import com.rekaerst.jrocket.ID;
-
 public abstract class GameObject {
 
     protected int x, y;
