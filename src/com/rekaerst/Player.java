@@ -8,7 +8,6 @@ public class Player extends Rocket {
     public Player(int x, int y, ID id) {
         super(x, y, id);
         // TODO Auto-generated constructor stub
-        setVelX(1);
     }
 
     @Override

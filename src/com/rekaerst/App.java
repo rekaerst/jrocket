@@ -27,8 +27,6 @@ public class App extends Canvas implements Runnable {
         new Window(WIDTH, HEIGHT, TITLE, this);
 
         handler = new Handler();
-
-        handler.addObject(new Player(100, 100, ID.Player));
     }
 
     public synchronized void start() {
@@ -90,9 +88,9 @@ public class App extends Canvas implements Runnable {
 
         g.setColor(Color.black);
         g.fillRect(0, 0, WIDTH, HEIGHT);
-        if (isLinux()) {
-            Toolkit.getDefaultToolkit().sync();
-        }
+        // if (isLinux()) {
+        // Toolkit.getDefaultToolkit().sync();
+        // }
         handler.render(g);
 
         g.dispose();
