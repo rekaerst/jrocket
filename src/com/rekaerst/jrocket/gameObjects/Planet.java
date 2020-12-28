@@ -2,6 +2,7 @@ package com.rekaerst.jrocket.gameObjects;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.geom.Ellipse2D;
 
 import com.rekaerst.jrocket.World;
 
@@ -13,12 +14,16 @@ public class Planet extends Astronomical {
     @Override
     public void render(Graphics g) {
         super.render(g);
-        g.setColor(Color.blue);
-        g.fillOval(x - 25, y - 25, 50, 50);
     }
 
     @Override
     public void tick() {
+        super.tick();
     }
+
+	@Override
+	public Ellipse2D getBounds() {
+		return super.getBounds();
+	}
 
 }

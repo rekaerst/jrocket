@@ -5,9 +5,9 @@ import java.awt.Rectangle;
 
 import com.rekaerst.jrocket.World;
 
-public class RocketPart extends GameObject {
+public class Part extends GameObject {
 
-    public RocketPart(int x, int y, ID id, World world) {
+    public Part(int x, int y, ID id, World world) {
         super(x, y, id, world);
     }
 

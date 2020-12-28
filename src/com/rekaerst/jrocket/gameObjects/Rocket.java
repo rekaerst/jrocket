@@ -6,7 +6,7 @@ import java.awt.Rectangle;
 
 import com.rekaerst.jrocket.World;
 
-public class Rocket extends RocketPart {
+public class Rocket extends Part {
 
     public Rocket(int x, int y, ID id, World world) {
         super(x, y, id, world);
@@ -16,8 +16,6 @@ public class Rocket extends RocketPart {
     public void render(Graphics g) {
         super.render(g);
 
-        g.setColor(Color.white);
-        g.fillRect(x, y, 50, 50);
     }
 
     @Override

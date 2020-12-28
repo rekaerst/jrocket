@@ -3,7 +3,6 @@ package com.rekaerst.jrocket.gameObjects;
 import java.awt.Graphics;
 import java.awt.geom.Ellipse2D;
 
-import com.rekaerst.jrocket.Handler;
 import com.rekaerst.jrocket.World;
 
 public class Astronomical extends GameObject {

@@ -33,15 +33,11 @@ public class App extends Canvas implements Runnable {
             System.setProperty("sun.java2d.opengl", "true");
         }
         world = new World();
+        hud = new HUD();
 
         this.addKeyListener(new KeyInput(world));
 
         new Window(WIDTH, HEIGHT, TITLE, this);
-        hud = new HUD();
-
-        GameObject rocket1 = new Rocket(0, HEIGHT - 50, ID.Rocket, world);
-        GameObject sun = new Sun(WIDTH / 2, HEIGHT / 2, ID.Sun, world);
-        GameObject planet = new Planet(WIDTH / 2 - 400, HEIGHT / 2, ID.Planet, world);
     }
 
     public synchronized void start() {
