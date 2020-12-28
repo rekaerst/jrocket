@@ -3,8 +3,13 @@ package com.rekaerst.jrocket;
 import java.awt.Canvas;
 import java.awt.Color;
 import java.awt.Graphics;
-import java.awt.Toolkit;
 import java.awt.image.BufferStrategy;
+
+import com.rekaerst.jrocket.gameObjects.GameObject;
+import com.rekaerst.jrocket.gameObjects.ID;
+import com.rekaerst.jrocket.gameObjects.Planet;
+import com.rekaerst.jrocket.gameObjects.Rocket;
+import com.rekaerst.jrocket.gameObjects.Sun;
 
 public class App extends Canvas implements Runnable {
 
@@ -18,19 +23,25 @@ public class App extends Canvas implements Runnable {
     private Thread thread;
     private boolean running = false;
 
-    private Handler handler;
+    private World world;
     private HUD hud;
+
+    public static long test = 0;
 
     public App() {
         if (isLinux()) {
             System.setProperty("sun.java2d.opengl", "true");
         }
-        handler = new Handler();
+        world = new World();
 
-        this.addKeyListener(new KeyInput(handler));
+        this.addKeyListener(new KeyInput(world));
 
         new Window(WIDTH, HEIGHT, TITLE, this);
         hud = new HUD();
+
+        GameObject rocket1 = new Rocket(0, HEIGHT - 50, ID.Rocket, world);
+        GameObject sun = new Sun(WIDTH / 2, HEIGHT / 2, ID.Sun, world);
+        GameObject planet = new Planet(WIDTH / 2 - 400, HEIGHT / 2, ID.Planet, world);
     }
 
     public synchronized void start() {
@@ -80,7 +91,7 @@ public class App extends Canvas implements Runnable {
     }
 
     private void ticks() {
-        handler.tick();
+        world.tick();
         hud.tick();
     }
 
@@ -99,7 +110,7 @@ public class App extends Canvas implements Runnable {
         // Toolkit.getDefaultToolkit().sync();
         // }
 
-        handler.render(g);
+        world.render(g);
 
         hud.render(g);
 

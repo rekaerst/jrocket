@@ -1,6 +1,9 @@
 package com.rekaerst.jrocket.gameObjects;
 
 import java.awt.Graphics;
+import java.awt.Shape;
+
+import com.rekaerst.jrocket.World;
 
 public abstract class GameObject {
 
@@ -8,16 +11,21 @@ public abstract class GameObject {
     protected double mass;
     protected ID id;
     protected int velX, velY;
+    protected World world;
 
-    public GameObject(int x, int y, ID id) {
+    public GameObject(int x, int y, ID id, World world) {
         this.x = x;
         this.y = y;
         this.id = id;
+        this.world = world;
+        world.addObject(this);
     }
 
     public abstract void tick();
 
     public abstract void render(Graphics g);
+
+    public abstract Shape getBounds();
 
     public int getX() {
         return x;

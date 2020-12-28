@@ -1,29 +1,33 @@
 package com.rekaerst.jrocket.gameObjects;
 
+import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Rectangle;
 
 import com.rekaerst.jrocket.World;
 
-public class RocketPart extends GameObject {
+public class Rocket extends RocketPart {
 
-    public RocketPart(int x, int y, ID id, World world) {
+    public Rocket(int x, int y, ID id, World world) {
         super(x, y, id, world);
     }
 
     @Override
     public void render(Graphics g) {
+        super.render(g);
+
+        g.setColor(Color.white);
+        g.fillRect(x, y, 50, 50);
     }
 
     @Override
     public void tick() {
-        x += velX;
-        y += velY;
+        super.tick();
     }
 
     @Override
     public Rectangle getBounds() {
-        return null;
+        return new Rectangle(x, y, 50, 50);
     }
 
 }

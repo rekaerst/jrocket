@@ -1,29 +1,26 @@
 package com.rekaerst.jrocket.gameObjects;
 
+import java.awt.Color;
 import java.awt.Graphics;
-import java.awt.Rectangle;
 
 import com.rekaerst.jrocket.World;
 
-public class RocketPart extends GameObject {
+public class Sun extends Astronomical {
 
-    public RocketPart(int x, int y, ID id, World world) {
+    public Sun(int x, int y, ID id, World world) {
         super(x, y, id, world);
     }
 
     @Override
     public void render(Graphics g) {
+        super.render(g);
+        g.setColor(Color.yellow);
+        g.fillOval(x - 100, y - 100, 200, 200);
     }
 
     @Override
     public void tick() {
-        x += velX;
-        y += velY;
-    }
-
-    @Override
-    public Rectangle getBounds() {
-        return null;
+        super.tick();
     }
 
 }

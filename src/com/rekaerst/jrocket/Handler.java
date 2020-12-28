@@ -6,7 +6,7 @@ import java.util.LinkedList;
 import com.rekaerst.jrocket.gameObjects.GameObject;
 
 public class Handler { // update all of objects
-    LinkedList<GameObject> objects = new LinkedList<GameObject>();
+    public LinkedList<GameObject> objects = new LinkedList<GameObject>();
 
     public void tick() {
         for (int i = 0; i < objects.size(); i++) {

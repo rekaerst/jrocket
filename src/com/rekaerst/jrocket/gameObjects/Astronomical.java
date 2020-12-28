@@ -1,22 +1,28 @@
 package com.rekaerst.jrocket.gameObjects;
 
 import java.awt.Graphics;
+import java.awt.geom.Ellipse2D;
+
+import com.rekaerst.jrocket.Handler;
+import com.rekaerst.jrocket.World;
 
 public class Astronomical extends GameObject {
 
-    public Astronomical(int x, int y, ID id) {
-        super(x, y, id);
-        // TODO Auto-generated constructor stub
+    public Astronomical(int x, int y, ID id, World handler) {
+        super(x, y, id, handler);
     }
 
+    @Override
     public void tick() {
-        // TODO Auto-generated method stub
-
     }
 
+    @Override
     public void render(Graphics g) {
-        // TODO Auto-generated method stub
+    }
 
+    @Override
+    public Ellipse2D getBounds() {
+        return null;
     }
 
 }
