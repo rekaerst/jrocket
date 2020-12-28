@@ -1,10 +1,13 @@
-package com.rekaerst.jrocket;
+package com.rekaerst.jrocket.gameObjects;
 
 import java.awt.Graphics;
+
+import com.rekaerst.jrocket.ID;
 
 public abstract class GameObject {
 
     protected int x, y;
+    protected double mass;
     protected ID id;
     protected int velX, velY;
 
@@ -56,5 +59,13 @@ public abstract class GameObject {
 
     public void setVelY(int velY) {
         this.velY = velY;
+    }
+
+    public double getMass() {
+        return mass;
+    }
+
+    public void setMass(double mass) {
+        this.mass = mass;
     }
 }

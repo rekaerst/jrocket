@@ -1,7 +1,8 @@
-package com.rekaerst.jrocket;
+package com.rekaerst.jrocket.gameObjects;
 
-import java.awt.Color;
 import java.awt.Graphics;
+
+import com.rekaerst.jrocket.ID;
 
 public class Player extends RocketPart {
 

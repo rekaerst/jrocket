@@ -3,6 +3,8 @@ package com.rekaerst.jrocket;
 import java.awt.Graphics;
 import java.util.LinkedList;
 
+import com.rekaerst.jrocket.gameObjects.GameObject;
+
 public class Handler { // update all of objects
     LinkedList<GameObject> objects = new LinkedList<GameObject>();
 

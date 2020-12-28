@@ -3,6 +3,8 @@ package com.rekaerst.jrocket;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
+import com.rekaerst.jrocket.gameObjects.GameObject;
+
 public class KeyInput extends KeyAdapter {
 
     private Handler handler;
