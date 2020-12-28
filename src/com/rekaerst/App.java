@@ -12,8 +12,8 @@ public class App extends Canvas implements Runnable {
 
     private static String OS = null;
 
-    private static final int WIDTH = 640, HEIGHT = WIDTH / 12 * 9;
-    private static final String TITLE = "JRocket Game";
+    public static final int WIDTH = 1280, HEIGHT = WIDTH / 16 * 9;
+    public static final String TITLE = "JRocket Game";
 
     private Thread thread;
     private boolean running = false;
@@ -24,10 +24,12 @@ public class App extends Canvas implements Runnable {
         if (isLinux()) {
             System.setProperty("sun.java2d.opengl", "true");
         }
+        new Window(WIDTH, HEIGHT, TITLE, this);
         handler = new Handler();
         this.addKeyListener(new KeyInput(handler));
 
-        new Window(WIDTH, HEIGHT, TITLE, this);
+        GameObject player = new Player(0, HEIGHT - 40, ID.Player);
+        handler.objects.add(player);
 
     }
 

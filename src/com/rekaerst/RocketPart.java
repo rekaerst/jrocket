@@ -10,7 +10,7 @@ public class RocketPart extends GameObject {
     }
 
     public void render(Graphics g) {
-
+        g.setColor(getColor());
     }
 
     public void tick() {
