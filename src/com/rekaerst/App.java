@@ -24,9 +24,11 @@ public class App extends Canvas implements Runnable {
         if (isLinux()) {
             System.setProperty("sun.java2d.opengl", "true");
         }
+        handler = new Handler();
+        this.addKeyListener(new KeyInput(handler));
+
         new Window(WIDTH, HEIGHT, TITLE, this);
 
-        handler = new Handler();
     }
 
     public synchronized void start() {

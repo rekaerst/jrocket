@@ -3,7 +3,7 @@ package com.rekaerst;
 import java.awt.Color;
 import java.awt.Graphics;
 
-public class Player extends Rocket {
+public class Player extends RocketPart {
 
     public Player(int x, int y, ID id) {
         super(x, y, id);

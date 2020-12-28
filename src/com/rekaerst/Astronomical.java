@@ -2,18 +2,20 @@ package com.rekaerst;
 
 import java.awt.Graphics;
 
-public class Rocket extends GameObject {
+public class Astronomical extends GameObject {
 
-    public Rocket(int x, int y, ID id) {
+    public Astronomical(int x, int y, ID id) {
         super(x, y, id);
         // TODO Auto-generated constructor stub
     }
 
     public void tick() {
+        // TODO Auto-generated method stub
 
     }
 
     public void render(Graphics g) {
+        // TODO Auto-generated method stub
 
     }
 
