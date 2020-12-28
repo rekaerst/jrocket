@@ -9,12 +9,13 @@ public class RocketPart extends GameObject {
         // TODO Auto-generated constructor stub
     }
 
-    public void tick() {
+    public void render(Graphics g) {
 
     }
 
-    public void render(Graphics g) {
-
+    public void tick() {
+        x += velX;
+        y += velY;
     }
 
 }

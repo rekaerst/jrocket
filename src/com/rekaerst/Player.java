@@ -20,8 +20,7 @@ public class Player extends RocketPart {
     @Override
     public void tick() {
         super.tick();
-        x += velX;
-        y += velY;
+
     }
 
 }
