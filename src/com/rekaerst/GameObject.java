@@ -1,5 +1,6 @@
 package com.rekaerst;
 
+import java.awt.Color;
 import java.awt.Graphics;
 
 public abstract class GameObject {
@@ -7,6 +8,7 @@ public abstract class GameObject {
     protected int x, y;
     protected ID id;
     protected int velX, velY;
+    protected Color color;
 
     public GameObject(int x, int y, ID id) {
         this.x = x;
@@ -56,5 +58,13 @@ public abstract class GameObject {
 
     public void setVelY(int velY) {
         this.velY = velY;
+    }
+
+    public Color getColor() {
+        return color;
+    }
+
+    public void setColor(Color color) {
+        this.color = color;
     }
 }
