@@ -1,4 +1,4 @@
-package com.rekaerst;
+package com.rekaerst.jrocket;
 
 import java.awt.Graphics;
 import java.util.LinkedList;
